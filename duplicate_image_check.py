@@ -32,7 +32,7 @@ if __name__=="__main__":
         img_list=glob(os.path.join(folder,"*"))
         image_dict=dict_maker(img_list,8)
         dup_remove(image_dict)
-        print(image_dict)
+        print(folder+" done")
 
 
 

@@ -8,7 +8,7 @@ from selenium.webdriver.firefox.options import Options        #comment this for 
 searchlist = ["Pyoderma", "paronychia", "furunculosis","bacterial skin"]                                   #input your search item here
 for searchterm in searchlist:
     img_goal = 500                                             #number of images to be downloaded
-    url = "https://www.google.co.in/search?q="+searchterm+"&source=lnms&tbm=isch"
+    url = "https://yandex.com/images/search?text="+searchterm
     opts=Options()
     opts.headless=True
     browser = webdriver.Firefox(options=opts)                 #use webdriver.Chrome() if using chrome 
