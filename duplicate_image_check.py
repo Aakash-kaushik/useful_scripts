@@ -1,5 +1,8 @@
 from glob import glob 
 import cv2,os
+from imagehash import phash
+from PIL import Image
+
 
 def dhash(img_path,hash_size):
     img=cv2.imread(img_path)
@@ -11,7 +14,8 @@ def dhash(img_path,hash_size):
 def dict_maker(img_list,hash_size):
     img_dict={}
     for img_path in img_list:
-        h=dhash(img_path,hash_size)
+        h=phash(Image.open(img_path))           #using phash instead of dhash
+        #h=dhash(img_path,hash_size)
         try:
             img_dict[h].append(img_path)
         except KeyError:
@@ -33,6 +37,3 @@ if __name__=="__main__":
         image_dict=dict_maker(img_list,8)
         dup_remove(image_dict)
         print(folder+" done")
-
-
-
