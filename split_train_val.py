@@ -1,6 +1,9 @@
 from glob import glob 
 import os, random, shutil
 
+if "val" not in os.listdir():
+    os.mkdir("val")
+
 classes_list=glob("train/*")
 for classes_path in classes_list:
     img_move_path=os.path.join("val",classes_path.split("/")[-1])
