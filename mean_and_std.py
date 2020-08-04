@@ -48,5 +48,5 @@ train_root = "./train"
 start = timeit.default_timer()
 mean, std = cal_dir_stat(train_root)
 end = timeit.default_timer()
-print("elapsed time: {}".format(end-start))
-print("mean:{}\nstd:{}".format(mean, std))
+print("mean:[{:.3f},{:.3f},{:.3f}]".format(mean[0],mean[1],mean[2]))
+print("std:[{:.3f},{:.3f},{:.3f}]".format(std[0],std[1],std[2]))
