@@ -8,10 +8,16 @@ from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 parser = argparse.ArgumentParser(description = 'Get the day order.')
 parser.add_argument('-d', '--dayorder', type = int, nargs = '?', default = False,
                     help = 'The day order for which to run the script.')
-
 args = parser.parse_args()
+
 if args.dayorder is not False:
-  day_order = args.dayorder - 1
+
+  if args.dayorder >= 1 and args.dayorder <= 6:
+    day_order = args.dayorder - 1
+  
+  else:
+    parser.error("day order can only be from 1 to 6")
+
 else:
   day_order = int(input("What Day order is it "))  - 1
 
