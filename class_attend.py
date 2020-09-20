@@ -98,7 +98,6 @@ while(while_flag):
     end_min = data[day_order][cur_hr][1][1]
 
     if not end_hour:
-      print('Out of time')
       time.sleep(10)
       continue
 
@@ -160,7 +159,6 @@ while(while_flag):
         join.click()
 
         while(True):
-          print('inner loop')
           time.sleep(5)
           time_now = datetime.now()
           cur_time = time_now.strftime("%H:%M")
