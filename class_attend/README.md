@@ -14,7 +14,8 @@
 
 once you find your firefox profile dir,  copy and replace `<profile-path>` on Line 81
 
-```profile = webdriver.FirefoxProfile(r'/<profile-path/>')
+```
+profile = webdriver.FirefoxProfile(r'/<profile-path/>')
 ```
 
 ## You're all set, run the script in your shell
