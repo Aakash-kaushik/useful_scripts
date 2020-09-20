@@ -21,7 +21,7 @@ data = [
   { 9: ["fdr65oczjr", [10, 40]],
     10: ["fdr65oczjr", [10, 40]],
     11: ["gzr5zxcgwq", [11,59]],
-    12: ["MEET code goes here", [False, False]],
+    12: ["MEET code goes here", [False, 59]],
     13: ["gnj6ch45ga", [13,59]],
     14: ["dqajocgb2s", [15, 30]]
   },
@@ -30,7 +30,7 @@ data = [
     9: ["ftu4im256o", [10, 40]],
     10: ["ftu4im256o", [10, 40]],
     11: ["fdr65oczjr", [11,59]],
-    12:["MEET code goes here", [False, False]],
+    12:["MEET code goes here", [False, 59]],
     13: ["gzr5zxcgwq", [13,59]],
     14: ["fp4bbewafy", [15, 30]]
   },
@@ -38,8 +38,8 @@ data = [
   {
     9: ["amnpq3yssi", [10, 40]],
     10: ["amnpq3yssi", [10, 40]],
-    11:["MEET code goes here", [False, False]],
-    12:["MEET code goes here", [False, False]],
+    11:["MEET code goes here", [False, 59]],
+    12:["MEET code goes here", [False, 59]],
     13: ["h7iwm73", [13,59]]
   },
 
@@ -47,7 +47,7 @@ data = [
     9: ["h7iwm73", [10, 40]],
     10: ["h7iwm73", [10, 40]],
     11: ["amnpq3yssi", [11,59]],
-    12: ["MEET code goes here", [False, False]],
+    12: ["MEET code goes here", [False, 59]],
     13: ["fdr65oczjr", [13,59]],
     14: ["amnpq3yssi", [15, 30]]
   },
@@ -56,8 +56,8 @@ data = [
     9: ["ev4gplxqal", [10, 40]],
     10: ["ev4gplxqal", [10, 40]],
     11: ["eoeben7fr6", [11,59]],
-    12:["MEET code goes here", [False, False]],
-    13:["MEET code goes here", [False, False]],
+    12:["MEET code goes here", [False, 59]],
+    13:["MEET code goes here", [False, 59]],
     14: ["gxmbn2tybn", [15, 30]]
   },
 
@@ -65,7 +65,7 @@ data = [
     9: ["h7iwm73", [10, 40]],
     10: ["h7iwm73", [10, 40]],
     11: ["amnpq3yssi", [11,59]],
-    12:["MEET code goes here", [False, False]],
+    12:["MEET code goes here", [False, 59]],
     13: ["fdr65oczjr", [13,59]],
     14: ["amnpq3yssi]", [15, 30]]
   }
@@ -77,7 +77,8 @@ data = [
 #linux distros: /home/<username>/.mozilla/firefox/hyabzzaw.default
 #windows: C:\Users\<username>\AppData\Roaming\Mozilla\Firefox\Profiles\fhv7nmb6.default
 #the path will go inside the FirefoxProfile in the next line
-profile = webdriver.FirefoxProfile('<profile path>')
+#please get geckodriver from mozilla's repo and add it as a PATH variable 
+profile = webdriver.FirefoxProfile(r'<profile-path>')
 profile = FirefoxProfile()
 profile.set_preference('devtools.jsonview.enabled', False)
 profile.set_preference('dom.webdriver.enabled', False)
@@ -97,12 +98,13 @@ while(while_flag):
     cur_hr = int(time_now.strftime("%H"))
     cur_min = int(time_now.strftime("%M"))
 
-    #assigning ending hour and ending minut variables for celaner understandable code
+    #assigning ending hour and ending minute variables for cleaner understandable code
     end_hour = data[day_order][cur_hr][1][0]
     end_min = data[day_order][cur_hr][1][1]
 
     if not end_hour:
-      time.sleep(10)
+      print(f"Waiting for next Lecture coming up in {(end_min - cur_min)} minutes")
+      time.sleep(60)
       continue
 
     elif (cur_hr <= end_hour):
@@ -175,8 +177,11 @@ while(while_flag):
               driver.close()
               break
       else:
-          print('continue')
+          print(f'Waiting for Next Lecture in {59 - cur_min} minutes')
+          time.sleep(60)
           continue
   except KeyError:
     if cur_hr>=16:
       exit()
+  except IndexError:
+    print("Please Input Correct Day Order Press ctrl+c to exit")
