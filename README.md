@@ -1,4 +1,4 @@
 ## Some useful python scripts
 
-- This will be updated and well documented in the future.
+- We will try to update and document things in the future.
 - Feel free to contribute by opening a Pull Request.
