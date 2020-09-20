@@ -72,8 +72,12 @@ data = [
 ]
 
 
-#profile = webdriver.FirefoxProfile('/home/aakash/.mozilla/firefox/hyabzzaw.default')
-profile = webdriver.FirefoxProfile(r"C:\Users\Omang\AppData\Roaming\Mozilla\Firefox\Profiles\fhv7nmb6.default")
+
+#the FirefoxProfile is the defualt user profile that could be foundd in a path similar to:
+#linux distros: /home/user/.mozilla/firefox/hyabzzaw.default
+#windows: C:\Users\Omang\AppData\Roaming\Mozilla\Firefox\Profiles\fhv7nmb6.default
+#the path will go inside the FirefoxProfile in the next line
+profile = webdriver.FirefoxProfile('<profile path>')
 profile = FirefoxProfile()
 profile.set_preference('devtools.jsonview.enabled', False)
 profile.set_preference('dom.webdriver.enabled', False)
