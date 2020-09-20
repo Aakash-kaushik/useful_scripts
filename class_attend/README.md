@@ -20,7 +20,7 @@ profile = webdriver.FirefoxProfile(r'/<profile-path/>')
 ### Before running the script
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## You're all set, run the script in your shell !!
