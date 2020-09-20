@@ -74,8 +74,8 @@ data = [
 
 
 #the FirefoxProfile is the defualt user profile that could be foundd in a path similar to:
-#linux distros: /home/user/.mozilla/firefox/hyabzzaw.default
-#windows: C:\Users\Omang\AppData\Roaming\Mozilla\Firefox\Profiles\fhv7nmb6.default
+#linux distros: /home/<username>/.mozilla/firefox/hyabzzaw.default
+#windows: C:\Users\<username>\AppData\Roaming\Mozilla\Firefox\Profiles\fhv7nmb6.default
 #the path will go inside the FirefoxProfile in the next line
 profile = webdriver.FirefoxProfile('<profile path>')
 profile = FirefoxProfile()
