@@ -26,8 +26,10 @@ pip3 install -r requirements.txt
 ## You're all set, run the script in your shell !!
 
 ```
-python3 class_attend.py
+python3 class_attend.py -d [day Order, type = integer]
 ```
+> will also work without any argument
+
 #### Future updates
  - [ ] day order selection when running the script.
  - [ ] support for other browsers, Not so sure about this.

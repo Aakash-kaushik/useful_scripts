@@ -6,8 +6,8 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
 parser = argparse.ArgumentParser(description = 'Get the day order.')
-parser.add_argument('-d', '--dayorder', type=int, nargs='?', default=False,
-                    help='The day order for which to run the script.')
+parser.add_argument('-d', '--dayorder', type = int, nargs = '?', default = False,
+                    help = 'The day order for which to run the script.')
 
 args = parser.parse_args()
 if args.dayorder is not False:
