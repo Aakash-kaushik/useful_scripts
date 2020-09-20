@@ -9,10 +9,12 @@
 
 ## Setting Firefox profile
 
-- linux distros: /home/ <username> /.mozilla/firefox/<Random_Letters>.default
-- windows: C:\Users\<username>\AppData\Roaming\Mozilla\Firefox\Profiles\<Random_Letters>.default
+- linux distros: /home/`<username>`/.mozilla/firefox/<Random_Letters>.default
+- windows: C:\Users\ `<username>`\AppData\Roaming\Mozilla\Firefox\Profiles\<Random_Letters>.default
 
-once you find your firefox profile dir,  copy and replace <profile-path> on Line 81
->profile = webdriver.FirefoxProfile(r'<profile-path>')
+once you find your firefox profile dir,  copy and replace `<profile-path>` on Line 81
+
+```profile = webdriver.FirefoxProfile(r'/<profile-path/>')
+```
 
 ## You're all set, run the script in your shell
