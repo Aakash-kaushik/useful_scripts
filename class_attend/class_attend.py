@@ -73,12 +73,12 @@ data = [
     14: ["gxmbn2tybn", [15, 30]]
   },
   {
-    9: ["h7iwm73", [10, 40]],
-    10: ["h7iwm73", [10, 40]],
-    11: ["amnpq3yssi", [11,59]],
+    9: ["urprrbngjv", [10, 40]],
+    10: ["urprrbngjv", [10, 40]],
+    11: ["rjgfbuunav", [11,59]],
     12:["MEET code goes here", [False, 59]],
-    13: ["fdr65oczjr", [13,59]],
-    14: ["amnpq3yssi]", [15, 30]]
+    13: ["qjzeiqenua", [13,59]],
+    14: ["hndkimfnkf]", [15, 30]]
   }
 ]
 
@@ -123,16 +123,14 @@ while(while_flag):
         print('entered')
         print(data[day_order][cur_hr][0])
         driver = webdriver.Firefox(desired_capabilities=DesiredCapabilities.FIREFOX,
-                                   firefox_profile=profile)
+            firefox_profile=profile)
+        driver.implicitly_wait(5)
         driver.get(meet)
 
-
-        #time.sleep(4)
         # Element for sign-in button.
         sign_in = driver.find_element_by_css_selector("span.cta-wrapper:nth-child(1) > a:nth-child(1)")
         sign_in.click()
 
-        time.sleep(4)
         # Element to find email field.
         email = driver.find_element_by_css_selector('#identifierId')
         email.send_keys(email_value)
@@ -149,12 +147,10 @@ while(while_flag):
         # To click next on the email page.
         pwd_next = driver.find_element_by_css_selector('.VfPpkd-LgbsSe-OWXEXe-k8QpJ > div:nth-child(3)')
         pwd_next.click()
-        time.sleep(4)
 
         # Join or start a meeting button.
         join_start = driver.find_element_by_class_name("cmvVG")
         join_start.click()
-        time.sleep(2)
 
         # Here the Gmeet code is passed to the code field on the Gmeet page.
         code_field = driver.find_element_by_css_selector(".poFWNe")
@@ -171,8 +167,8 @@ while(while_flag):
         # Disabling the mic stream if on otherwise if off will turn it on.
         webdriver.ActionChains(driver).key_down(Keys.CONTROL).send_keys("d").perform()
 
-        time.sleep(4)
         # To join the meeting.
+        time.sleep(4)
         join = driver.find_element_by_css_selector(".NPEfkd")
         join.click()
 
