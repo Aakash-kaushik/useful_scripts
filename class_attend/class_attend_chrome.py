@@ -89,7 +89,7 @@ data = [
 options = Options()
 options.add_argument(<user profile>)
 
-# Try adjusting this so when chrome window open you see the sign-in button
+# Try adjusting this so when chrome window open you see the sign-in button.
 options.add_argument("window-size=1200,900")
 
 while_flag = True
